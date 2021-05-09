@@ -25,7 +25,11 @@ MongoClient.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
     })
     .catch(console.error);
 
-app.listen(5000, function () {
-    console.log(`Listening on port ${this.address().port}`);
+// app.listen(5000, function () {
+//     console.log(`Listening on port ${this.address().port}`);
+// });
+
+app.listen(process.env.PORT || 5000, function () {
+    console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
 // comment to redploy
