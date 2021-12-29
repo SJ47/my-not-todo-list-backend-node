@@ -7,7 +7,7 @@ const cors = require("cors");
 require("dotenv").config();
 
 app.use(express.json()); //Used to parse JSON bodies instead of line above
-app.use(cors({ origin: "http://localhost:8888" }));
+app.use(cors({ origin: "*" }));
 
 const username = process.env.REACT_APP_DB_USER;
 const password = process.env.REACT_APP_DB_KEY;
