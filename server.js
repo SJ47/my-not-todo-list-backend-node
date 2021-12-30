@@ -6,8 +6,8 @@ const createRouter = require("./helpers/create_router");
 const cors = require("cors");
 require("dotenv").config();
 
-app.use(express.json()); //Used to parse JSON bodies instead of line above
-app.use(cors({ origin: "*" }));
+app.use(express.json());
+app.use(cors())
 
 const username = process.env.REACT_APP_DB_USER;
 const password = process.env.REACT_APP_DB_KEY;
@@ -22,7 +22,6 @@ MongoClient.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
     })
     .catch(console.error);
 
-app.listen(process.env.PORT || 5000, function () {
+app.listen(process.env.PORT || 5001, function () {
     console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
-// comment to redploy

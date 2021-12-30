@@ -30,7 +30,7 @@ const createRouter = function (collection) {
                 console.error(err);
                 res.status(500);
                 res.json({ status: 500, error: err });
-            });
+            })
     });
 
     //DELETE
